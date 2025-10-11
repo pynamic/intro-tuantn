@@ -32,7 +32,6 @@
 .text-ellipsis.ellipsis-5{
   -webkit-line-clamp: 5;
 }
-
 a:hover{
     color: var(--text_hover_color);
 }
