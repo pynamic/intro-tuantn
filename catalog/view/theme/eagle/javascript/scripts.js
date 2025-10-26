@@ -673,33 +673,7 @@ debugger;
 		getStoreIndex: function(){
 
 		},
-		getImageInstagram: function() {
-			var feed = new Instafeed({
-				get: 'user',
-				limit: "8",
-				userId: "4087605087",
-				/*clientId: 'c35f9d868c48411eb187774ec6daa06a',*/
-				accessToken: "4087605087.ad0b1c2.294330447a8542e6943ab0c04bfc2284",
-				target: 'instafeed',
-				resolution: 'standard_resolution',
-				template: '<a class="instagram_item" href="{{link}}" target="_blank">' +
-					'<div class="instagram_image" style="background-image: url({{image}})"></div>' +
-					'<div class="instagram_overlay">' +
-					'	<span class="instagram_likecount">' +
-					'		<svg class="svg-logo">' +
-					'			<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-heart"></use>' +
-					'		</svg>{{likes}} likes' +
-					'	</span>' +
-					'	<p class="instagram_caption">{{caption}}</p>' +
-					'</div></a>',
-				before: function() {
-					$('#instafeed').html('<div class="icon-loading"><div class="uil-ring-css"><div></div></div></div>');
-				},after: function() {
-					$('.icon-loading').remove();
-				}
-			});
-			feed.run();
-		},
+		
 	};
 	$(document).ready(function(){
 		/*$.when(getApiStore()).then(function () {
