@@ -48,3 +48,36 @@
         transform: rotate(-8deg) scale(0.95);
     }
 }
+.chat-item {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+}
+
+.chat-btnn {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: none; /* Không viền */
+    background: none; /* Không nền */
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.chat-btnn img {
+    width: 100%; /* Fit theo nút */
+    height: auto;
+    display: block;
+}
+
+/* Hiệu ứng hover */
+.chat-btnn:hover {
+    transform: scale(1.15);
+}
+
+.chat-label {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #fdfbfb;
+    font-weight: 500;
+}
