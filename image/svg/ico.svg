@@ -1,0 +1,9 @@
+<!-- Save as favicon-badge.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Hoang Hai">
+  <title>HH</title>
+  <rect width="64" height="64" rx="12" fill="#0b84ff" />
+  <circle cx="32" cy="32" r="26" fill="#ff7a18"/>
+  <g fill="#ffffff" font-family="Segoe UI, Roboto, Arial" font-weight="700" font-size="28" text-anchor="middle" dominant-baseline="central">
+    <text x="32" y="34">HH</text>
+  </g>
+</svg>
