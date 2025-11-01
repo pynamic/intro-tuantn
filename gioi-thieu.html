@@ -546,6 +546,7 @@
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
     </style>
+    <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/custom.css" />
     <link rel="stylesheet" type="text/css" href="catalog/view/theme/eagle/stylesheet/owl.carousel.min.css.css" />
     <link rel="stylesheet" type="text/css" href="catalog/view/theme/eagle/stylesheet/animate.min.css.css" />
     <link rel="stylesheet" type="text/css" href="catalog/view/theme/eagle/stylesheet/tch.min.css.css" />
@@ -5684,6 +5685,23 @@
             </div>
         </div>
     </footer>
+    <div class="chat-wrap">
+    <div class="chat-buttons">
+        <button class="chat-btn messenger" data-link="https://m.me/pynamic" aria-label="Chat Messenger">
+            <img src="image/svg/fb.png" loading="eager" alt="Messenger Icon">
+        </button>
+        <button class="chat-btn zalo" data-link="https://zalo.me/+08983859568" aria-label="Chat Zalo">
+            <img src="image/svg/zalo.png" loading="eager" alt="Zalo Icon">
+        </button>
+        <button class="chat-btn whatsapp" data-link="https://wa.me/+84983859568" aria-label="Chat WhatsApp">
+            <img src="image/svg/whatsapp.png" loading="eager" alt="WhatsApp Icon">
+        </button>
+        <button class="chat-btn mobile" data-link="tel:0983859568" aria-label="Phone Mobile">
+            <img src="image/svg/mobile.png" loading="eager" alt="Phone-Call Icon">
+        </button>
+    </div>
+</div>
+
     <script type="text/javascript" src="catalog/view/theme/eagle/javascript/bootstrap.min.js"></script>
     <script type="text/javascript" src="catalog/view/theme/eagle/javascript/all.min.js"></script>
     <script type="text/javascript" src="catalog/view/theme/eagle/javascript/tch_plugins.min.js"></script>
@@ -5692,19 +5710,28 @@
     <script type="text/javascript" src="catalog/view/theme/eagle/javascript/custom.js"></script>
     <!-- Facebook script -->
     <div id="fb-root"></div>
-    <!-- <script type="text/javascript">
-        setTimeout(function() {
-            (function(d, s, id) {
-                console.log(d, s, id);
+    <script type="text/javascript">
+        setTimeout(function () {
+            (function (d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
                 if (d.getElementById(id)) return;
                 js = d.createElement(s);
                 js.id = id;
-                js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.2&appId=829732533863539";
+                js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.2&appId=686247120670649";
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
         }, 5000);
-    </script> -->
+    </script>
+
+    <script>
+        // Click to go to link
+        document.querySelectorAll('.chat-btn[data-link]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const link = btn.getAttribute('data-link');
+                if (link) window.open(link, '_blank');
+            });
+        });
+    </script>
 </body>
 
 </html>
