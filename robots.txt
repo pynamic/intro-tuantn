@@ -1,33 +1,3 @@
 User-agent: *
-
-Disallow: /admin/
-Disallow: /catalog/controller/
-Disallow: /cgi-bin/
-Disallow: /cgi-sys/
-Disallow: /data/
-Disallow: /download/
-Disallow: /image/cache/
-Disallow: /system/
-Disallow: /tmp/
-Disallow: /vqmod/
-
-Disallow: /account/
-Disallow: /affiliate/
-Disallow: /checkout/
-Disallow: /common/
-Disallow: /error/
-Disallow: /listing/
-Disallow: /news/news/comment
-Disallow: /news/news/write
-Disallow: /news/search
-Disallow: /product/product/review
-Disallow: /product/product/comment
-Disallow: /product/product/write
-Disallow: /product/search/
-Disallow: /showrooms/
-Disallow: /tool/
-Disallow: /video/
-
-Disallow: /*?*
-
+Allow: /
 Sitemap: https://hoanghailimousine.com/sitemap.xml
