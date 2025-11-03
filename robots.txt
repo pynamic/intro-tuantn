@@ -30,4 +30,4 @@ Disallow: /video/
 
 Disallow: /*?*
 
-Sitemap: https://kingcoffee.exdomain.net/sitemap.xml
+Sitemap: https://hoanghailimousine.com/sitemap.xml
