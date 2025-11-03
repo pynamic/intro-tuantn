@@ -682,10 +682,4 @@ debugger;
 		TCH.init();
 		new WOW().init();
 	});
-
-	function getApiStore(){
-		return $.get( "//api.thecoffeehouse.com/api/get_all_store", function(data){
-			window.stores = data;
-		});
-	}
 })(jQuery, window);
