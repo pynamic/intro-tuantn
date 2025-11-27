@@ -158,7 +158,7 @@ h6 {
 p {
     margin-bottom: 10px;
     line-height: 24px;
-    font-size: 16px
+    font-size: 17px
 }
 
 img {
@@ -842,7 +842,7 @@ body.overflow_hidden {
 .banner_top_title h1 {
     font-size: 42px;
     font-weight: 700;
-    color: #fff;
+    /* color: #000000; */
     font-family: Lora, sans-serif;
     margin: 0
 }
