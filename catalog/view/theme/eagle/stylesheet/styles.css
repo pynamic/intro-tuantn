@@ -1122,10 +1122,19 @@ header .login a {
     position: relative;
     height: calc(100vh - 61px);
     overflow: hidden;
-    background-position: center center;
-    background-size: cover
-}
+    background-position: bottom center;
+    /* background-size: cover; */
+    background-size: 100% 120%;
+    transition: background 0.3s ease;
+    background-repeat: no-repeat;
 
+}
+/* Responsive: điều chỉnh background-size trên màn hình nhỏ */
+@media (max-width: 768px) {
+    .module_gallery .item {
+        background-size: 100% 100%; /* tăng độ cao để hiển thị đẹp trên mobile */
+    }
+}
 #slide_collection,
 #slide_collection .item,
 #slide_collection .owl-carousel {
