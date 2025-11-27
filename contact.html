@@ -5684,7 +5684,7 @@
 
                                     <div class="buttons col-sm-12">
                                         <div class="pull-right">
-                                            <input class="btn btn-primary" type="submit" value="Gửi đi">
+                                            <input id="submit-btn" class="btn btn-primary" type="submit" value="Gửi đi">
                                         </div>
                                     </div>
                                 </fieldset>
@@ -5718,9 +5718,15 @@
 
                             <script>
                                 document.getElementById('contact-form').addEventListener('submit', async function (e) {
-                                    e.preventDefault(); // chặn submit mặc định
+                                    e.preventDefault();
 
                                     const form = e.target;
+                                    const submitBtn = document.getElementById('submit-btn');
+
+                                    // Disable nút submit
+                                    submitBtn.disabled = true;
+                                    submitBtn.value = 'Đang gửi...';
+
                                     const data = new FormData(form);
 
                                     try {
@@ -5733,7 +5739,10 @@
                                         });
 
                                         if (res.ok) {
-                                            form.reset();
+                                            // Chỉ reset nội dung input/textarea
+                                            form.querySelectorAll('input[type="text"], input[type="tel"], input[type="email"], textarea').forEach(el => el.value = '');
+
+                                            // Hiển thị popup
                                             document.getElementById('success-popup').style.display = 'flex';
                                         } else {
                                             const json = await res.json();
@@ -5742,6 +5751,10 @@
 
                                     } catch (err) {
                                         alert('Lỗi gửi form: ' + err);
+                                    } finally {
+                                        // Bật lại nút submit
+                                        submitBtn.disabled = false;
+                                        submitBtn.value = 'Gửi đi';
                                     }
                                 });
                             </script>
