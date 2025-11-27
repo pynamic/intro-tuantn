@@ -5740,7 +5740,7 @@
 
                                         if (res.ok) {
                                             // Chỉ reset nội dung input/textarea
-                                            form.querySelectorAll('input[type="text"], input[type="tel"], input[type="email"], textarea').forEach(el => el.value = '');
+                                            form.querySelectorAll('textarea').forEach(el => el.value = '');
 
                                             // Hiển thị popup
                                             document.getElementById('success-popup').style.display = 'flex';
