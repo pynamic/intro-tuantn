@@ -15,19 +15,21 @@
 
     <title>Liên hệ Hoàng Hải Limousine | Đặt vé xe Bắc Ninh - Lào Cai nhanh chóng</title>
 
-    <meta name="description" content="Liên hệ Hoàng Hải Limousine để đặt vé xe Bắc Ninh - Lào Cai nhanh chóng. Hỗ trợ 24/7, xe limousine vip, phục vụ chuyên nghiệp." />
+    <meta name="description"
+        content="Liên hệ Hoàng Hải Limousine để đặt vé xe Bắc Ninh - Lào Cai nhanh chóng. Hỗ trợ 24/7, xe limousine vip, phục vụ chuyên nghiệp." />
     <meta name="keywords" content="xe limousine, đặt vé xe, Bắc Ninh Lào Cai, Hoàng Hải Limousine, xe khách cao cấp" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#FFFFFF" />
 
-    <base href="https://hoanghailimousine.com" />
+    <!-- <base href="https://hoanghailimousine.com" /> -->
 
     <link rel="icon" type="image/svg+xml" href="image/svg/ico.svg" />
     <link rel="alternate icon" href="image/svg/ico.svg" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="Liên hệ Hoàng Hải Limousine | Đặt vé xe Bắc Ninh - Lào Cai" />
-    <meta property="og:description" content="Kênh liên hệ chính thức của Hoàng Hải Limousine. Đặt vé nhanh – hỗ trợ 24/7." />
+    <meta property="og:description"
+        content="Kênh liên hệ chính thức của Hoàng Hải Limousine. Đặt vé nhanh – hỗ trợ 24/7." />
     <meta property="og:url" content="https://hoanghailimousine.com/contact.html" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://hoanghailimousine.com/image/catalog/logo/logo.png" />
@@ -5527,7 +5529,7 @@
 </head>
 
 <body class="information-contact">
-        <header id="header">
+    <header id="header">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-2 col-md-2 col-xs-2">
@@ -5639,35 +5641,149 @@
                                     </div>
                                 </div>
                             </div>
-                            <form action="contact.html" method="post" enctype="multipart/form-data"
-                                class="form-horizontal">
+                            <form id="contact-form" class="form-horizontal">
+                                <input type="hidden" name="_captcha" value="false">
+
                                 <fieldset>
                                     <div class="activities_title">
                                         <h2 class="title section_heading line_after_heading line_after_heading_section">
-                                            Mọi thắc mắc vui lòng liên hệ</h2>
+                                            Mọi thắc mắc vui lòng liên hệ
+                                        </h2>
                                     </div>
-                                    <div class="form-group required"> <label class="col-sm-2 control-label"
-                                            for="input-name">Tên của bạn</label>
-                                        <div class="col-sm-10"> <input type="text" name="name" value="" id="input-name"
-                                                class="form-control" /> </div>
+
+                                    <div class="form-group required">
+                                        <label class="col-sm-2 control-label" for="input-name">Tên của bạn</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="name" id="input-name" class="form-control"
+                                                required>
+                                        </div>
                                     </div>
-                                    <div class="form-group required"> <label class="col-sm-2 control-label"
-                                            for="input-email">Địa chỉ Email</label>
-                                        <div class="col-sm-10"> <input type="text" name="email" value=""
-                                                id="input-email" class="form-control" /> </div>
+
+                                    <div class="form-group required">
+                                        <label class="col-sm-2 control-label" for="input-phone">Số của bạn</label>
+                                        <div class="col-sm-10">
+                                            <input type="tel" name="phone" id="input-phone" class="form-control"
+                                                required>
+                                        </div>
                                     </div>
-                                    <div class="form-group required"> <label class="col-sm-2 control-label"
-                                            for="input-enquiry">Nội dung</label>
-                                        <div class="col-sm-10"> <textarea name="enquiry" rows="10" id="input-enquiry"
-                                                class="form-control"></textarea> </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label" for="input-email">Địa chỉ Email</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" name="email" id="input-email" class="form-control">
+                                        </div>
                                     </div>
+
+                                    <div class="form-group required">
+                                        <label class="col-sm-2 control-label" for="input-enquiry">Nội dung</label>
+                                        <div class="col-sm-10">
+                                            <textarea name="message" rows="10" id="input-enquiry" class="form-control"
+                                                required></textarea>
+                                        </div>
+                                    </div>
+
                                     <div class="buttons col-sm-12">
-                                        <div class="pull-right"> <input class="btn btn-primary" type="submit"
-                                                value="Gửi đi" /> </div>
+                                        <div class="pull-right">
+                                            <input class="btn btn-primary" type="submit" value="Gửi đi">
+                                        </div>
                                     </div>
                                 </fieldset>
                             </form>
-                            <!---->
+
+                            <!-- Popup -->
+                            <div id="success-popup" style="
+    display:none;
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.6);
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+">
+                                <div style="
+        background:#fff;
+        padding:30px;
+        border-radius:10px;
+        text-align:center;
+        max-width:400px;
+        margin:auto;
+    ">
+                                    <h2 style="color:green;">Gửi thành công!</h2>
+                                    <p>Cảm ơn bạn đã liên hệ. Chúng tôi sẽ phản hồi sớm.</p>
+                                    <button onclick="document.getElementById('success-popup').style.display='none'"
+                                        style="padding:10px 20px; border:none; background:#007bff; color:#fff; border-radius:5px; cursor:pointer;">Đóng</button>
+                                </div>
+                            </div>
+
+                            <script>
+                                document.getElementById('contact-form').addEventListener('submit', async function (e) {
+                                    e.preventDefault(); // chặn submit mặc định
+
+                                    const form = e.target;
+                                    const data = new FormData(form);
+
+                                    try {
+                                        const res = await fetch('https://formsubmit.co/pynamic0@gmail.com', {
+                                            method: 'POST',
+                                            body: data,
+                                            headers: {
+                                                'Accept': 'application/json'
+                                            }
+                                        });
+
+                                        if (res.ok) {
+                                            form.reset();
+                                            document.getElementById('success-popup').style.display = 'flex';
+                                        } else {
+                                            const json = await res.json();
+                                            alert('Gửi thất bại: ' + (json.message || 'Unknown error'));
+                                        }
+
+                                    } catch (err) {
+                                        alert('Lỗi gửi form: ' + err);
+                                    }
+                                });
+                            </script>
+
+
+                            <!-- <form action="https://api.web3forms.com/submit" method="POST" class="form-horizontal">
+                                <input type="hidden" name="access_key" value="3c99eba0-40f9-42b2-bbc1-678906bbf951">
+                                <fieldset>
+                                    <div class="activities_title">
+                                        <h2 class="title section_heading line_after_heading line_after_heading_section">
+                                            Mọi thắc mắc vui lòng liên hệ
+                                        </h2>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label class="col-sm-2 control-label" for="input-name">Tên của bạn</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" name="name" id="input-name" class="form-control"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label class="col-sm-2 control-label" for="input-email">Địa chỉ Email</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" name="email" id="input-email" class="form-control"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label class="col-sm-2 control-label" for="input-enquiry">Nội dung</label>
+                                        <div class="col-sm-10">
+                                            <textarea name="message" rows="10" id="input-enquiry" class="form-control"
+                                                required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="buttons col-sm-12">
+                                        <div class="pull-right">
+                                            <input class="btn btn-primary" type="submit" value="Gửi đi">
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form> -->
+
                         </div>
                         <div class="clearfix"></div>
                         <div class="container"> </div>
