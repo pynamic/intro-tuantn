@@ -1132,7 +1132,7 @@ header .login a {
 /* Responsive: điều chỉnh background-size trên màn hình nhỏ */
 @media (max-width: 768px) {
     .module_gallery .item {
-        background-size: 100% 80%; /* tăng độ cao để hiển thị đẹp trên mobile */
+        background-size: 100% 100%; /* tăng độ cao để hiển thị đẹp trên mobile */
     }
 }
 #slide_collection,
@@ -4943,17 +4943,21 @@ footer {
         padding: 8px 20px
     }
 }
-/* div.logo_wrap img.svg-logo {
-    width: 60% !important;
+.item_lv1 a {
+    font-weight: 500 !important;
+    font-size: 20px !important;
+}
+div.logo_wrap img.svg-logo {
+    width: 50% !important;
     height: auto !important;
     max-width: none !important;
     transform: scale(0.8) !important;
     transform-origin: center center !important;
     display: inline-block !important;
-} */
+}
 @media (max-width:1199px) and (min-width:992px) {
     .logo_wrap .svg-logo {
-        width: 60% !important;
+        width: 100% !important;
         height: auto !important;
         max-width: none !important;
     }
@@ -5760,7 +5764,7 @@ footer {
     .module_gallery,
     .module_gallery .item,
     .module_gallery .owl-carousel {
-        height: calc(60vh - 61px)
+        height: calc(60vh - 100px)
     }
 
     .gallery_owl_slide .hrv-banner-content {
