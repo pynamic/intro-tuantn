@@ -2,14 +2,9 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="100%" viewBox="0 0 1024 1024" enable-background="new 0 0 1024 1024" xml:space="preserve">
  <defs>
-    <!-- Mask mờ từ dưới lên -->
     <linearGradient id="fadeInside" x1="0" y1="1" x2="0" y2="0">
     <stop offset="0%" stop-color="white" stop-opacity="1"/>
-
-    <!-- 50%: hết fade, trong suốt -->
     <stop offset="50%" stop-color="white" stop-opacity="0"/>
-
-    <!-- Trên 50%: luôn trong suốt -->
     <stop offset="100%" stop-color="white" stop-opacity="0"/>
     </linearGradient>
 
