@@ -1,0 +1,85 @@
+.two-column {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    flex-wrap: wrap;
+    /* để tự xuống hàng khi thiếu chỗ */
+}
+
+.two-column li {
+    flex: 1 1 calc(50% - 20px);
+    /* 2 cột trên PC */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* chữ nổi bật */
+.two-column li a {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e3a8a;
+    text-decoration: none;
+}
+
+/* Style PC */
+.two-column a {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e3a8a;
+    text-decoration: none;
+}
+/* Style PC */
+.phone-mobile a{
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e3a8a;
+    text-decoration: none;
+}
+
+.phone-mobile {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    text-decoration: none;
+}
+.two-column li a:hover {
+    color: #eab308;
+}
+
+.two-column img {
+    margin-top: 8px;
+    max-width: 150px;
+    border-radius: 6px;
+}
+.reason-list {
+    font-size: 16px !important;
+}
+/* --- Responsive Mobile --- */
+@media (max-width: 600px) {
+    .two-column li {
+        flex: 1 1 100%;
+        /* 1 cột trên mobile */
+    }
+
+    .two-column li a {
+        font-size: 18px;
+        /* nhỏ hơn chút để vừa màn hình */
+    }
+
+    .two-column img {
+        max-width: 180px;
+        /* cho hình to hơn vì 1 cột */
+    }
+
+    .two-column a {
+        font-size: 0 !important;
+        /* Ẩn text nhưng không ảnh hưởng ảnh */
+    }
+
+    .two-column a img {
+        max-width: 180px;
+        display: block;
+    }
+}
