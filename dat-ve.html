@@ -5553,8 +5553,11 @@
                 </div>
                 <div class="col-xs-8 visible-xs visible-sm">
                     <div class="logo_wrap text-center"> <a href="index.html" class="logo" title="Hoang Hai Limousine">
-                            <img
-                                src="image/catalog/logo/logo.png" alt="HoangHai" class="svg-logo" /> </a> </div>
+                            <img src="image/catalog/logo/logo.png" alt="HoangHai" class="svg-logo" />
+                            <span class="logo-text">
+                                <span class="logo-name">Hoàng Hải</span>
+                                <span class="logo-sub">Limousine</span>
+                            </span></a> </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-xs-2">
                     <div class="row align-items-center justify-content-start">
@@ -5563,6 +5566,10 @@
                             <div class="logo_wrap text-center hidden-xs"> <a href="index.html" class="logo"
                                     title="Hoang Hai Limousine">
                                     <img src="image/catalog/logo/logo.png" alt="Hoang Hai Limousine" class="svg-logo" />
+                                    <span class="logo-text">
+                                        <span class="logo-name">Hoàng Hải</span>
+                                        <span class="logo-sub">Limousine</span>
+                                    </span>
                                 </a>
                             </div> <a class="visible-xs visible-sm" href="javascript:void(0)" id="showmenu-mobile">
                                 <span></span> <span></span>
@@ -5777,14 +5784,14 @@
                     </div>
                 </div>
             </div>
-    <section class="section_pre_footer module_service text-center animated fadeInUp" style="padding-top:0;">
-        <div class="container">
-            <h4>Bạn đang quan tâm gì?</h4>
-            <button class="btn-box" id="openContactPopup">
-                Liên hệ chúng tôi
-            </button>
-        </div>
-    </section>
+            <section class="section_pre_footer module_service text-center animated fadeInUp" style="padding-top:0;">
+                <div class="container">
+                    <h4>Bạn đang quan tâm gì?</h4>
+                    <button class="btn-box" id="openContactPopup">
+                        Liên hệ chúng tôi
+                    </button>
+                </div>
+            </section>
 
         </div>
         </div>
@@ -5866,7 +5873,7 @@
     </footer>
     <div class="chat-wrap">
         <div class="chat-buttons">
-             <button class="chat-btn zalo" data-link="https://zalo.me/+84983859568" aria-label="Chat Zalo">
+            <button class="chat-btn zalo" data-link="https://zalo.me/+84983859568" aria-label="Chat Zalo">
                 <img src="image/svg/zalo.png" loading="eager" alt="Zalo Icon">
             </button>
             <button class="chat-btn messenger" data-link="https://m.me/hoanghailimousine" aria-label="Chat Messenger">
@@ -5910,78 +5917,78 @@
         });
     </script>
     <script>
-    document.querySelectorAll('.popup-contact-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const link = btn.getAttribute('data-link');
-            window.open(link, '_blank');
+        document.querySelectorAll('.popup-contact-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const link = btn.getAttribute('data-link');
+                window.open(link, '_blank');
+            });
         });
-    });
-</script>
+    </script>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const openBtn = document.getElementById('openContactPopup');
-    const popup = document.getElementById('contactPopup');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const openBtn = document.getElementById('openContactPopup');
+            const popup = document.getElementById('contactPopup');
 
-    if (!openBtn || !popup) {
-        console.error('Popup elements not found');
-        return;
-    }
+            if (!openBtn || !popup) {
+                console.error('Popup elements not found');
+                return;
+            }
 
-    openBtn.addEventListener('click', function () {
-        popup.style.display = 'flex';
-    });
+            openBtn.addEventListener('click', function () {
+                popup.style.display = 'flex';
+            });
 
-    popup.addEventListener('click', function (e) {
-        if (
-            e.target === popup ||
-            e.target.classList.contains('popup-close-x')
-        ) {
-            popup.style.display = 'none';
-        }
+            popup.addEventListener('click', function (e) {
+                if (
+                    e.target === popup ||
+                    e.target.classList.contains('popup-close-x')
+                ) {
+                    popup.style.display = 'none';
+                }
 
-        const btn = e.target.closest('.popup-btn');
-        if (btn && btn.dataset.link) {
-            window.open(btn.dataset.link, '_blank');
-        }
-    });
-});
-</script>
+                const btn = e.target.closest('.popup-btn');
+                if (btn && btn.dataset.link) {
+                    window.open(btn.dataset.link, '_blank');
+                }
+            });
+        });
+    </script>
 
-<div class="contact-popup-overlay" id="contactPopup">
-    <div class="contact-popup-box">
+    <div class="contact-popup-overlay" id="contactPopup">
+        <div class="contact-popup-box">
 
-        <!-- Nút đóng -->
-        <button class="popup-close-x" aria-label="Đóng popup">✕</button>
+            <!-- Nút đóng -->
+            <button class="popup-close-x" aria-label="Đóng popup">✕</button>
 
-        <h3>Thông tin liên hệ</h3>
+            <h3>Thông tin liên hệ</h3>
 
-        <p class="popup-address">
-            📍 Đường Lê Lai, Khả Lễ, Võ Cường, TP Bắc Ninh
-        </p>
+            <p class="popup-address">
+                📍 Đường Lê Lai, Khả Lễ, Võ Cường, TP Bắc Ninh
+            </p>
 
-        <div class="popup-contact-actions">
-            <button class="popup-btn zalo" data-link="https://zalo.me/+84983859568">
-                <img src="image/svg/zalo.png" alt="">
-                <span>Zalo</span>
-            </button>
-            <button class="popup-btn messenger" data-link="https://m.me/hoanghailimousine">
-                <img src="image/svg/fb.png" alt="">
-                <span>Messenger</span>
-            </button>
-            <button class="popup-btn whatsapp" data-link="https://wa.me/84983859568">
-                <img src="image/svg/whatsapp.png" alt="">
-                <span>WhatsApp</span>
-            </button>
+            <div class="popup-contact-actions">
+                <button class="popup-btn zalo" data-link="https://zalo.me/+84983859568">
+                    <img src="image/svg/zalo.png" alt="">
+                    <span>Zalo</span>
+                </button>
+                <button class="popup-btn messenger" data-link="https://m.me/hoanghailimousine">
+                    <img src="image/svg/fb.png" alt="">
+                    <span>Messenger</span>
+                </button>
+                <button class="popup-btn whatsapp" data-link="https://wa.me/84983859568">
+                    <img src="image/svg/whatsapp.png" alt="">
+                    <span>WhatsApp</span>
+                </button>
 
-            <button class="popup-btn mobile" data-link="tel:+84983859568">
-                <img src="image/svg/mobile.png" alt="">
-                <span>Gọi điện</span>
-            </button>
+                <button class="popup-btn mobile" data-link="tel:+84983859568">
+                    <img src="image/svg/mobile.png" alt="">
+                    <span>Gọi điện</span>
+                </button>
+            </div>
+
         </div>
-
     </div>
-</div>
 </body>
 
 </html>
