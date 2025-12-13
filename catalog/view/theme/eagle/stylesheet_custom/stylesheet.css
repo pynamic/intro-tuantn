@@ -30,8 +30,9 @@
     color: #1e3a8a;
     text-decoration: none;
 }
+
 /* Style PC */
-.phone-mobile a{
+.phone-mobile a {
     font-size: 20px;
     font-weight: 700;
     color: #1e3a8a;
@@ -44,6 +45,7 @@
     color: #000000;
     text-decoration: none;
 }
+
 .two-column li a:hover {
     color: #eab308;
 }
@@ -53,33 +55,80 @@
     max-width: 150px;
     border-radius: 6px;
 }
+
 .reason-list {
     font-size: 16px !important;
 }
+
+.hotline-title {
+    font-size: 18px;
+    font-weight: 700;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.hotline-number {
+    font-size: 30px;
+    /* bự hơn h3 */
+    font-weight: 800;
+    color: #000000;
+    /* đen */
+}
+.no-bullet {
+    list-style: none !important;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.highlight-service {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    /* gap: 20px; */
+    /* align-items: center; */
+    margin: 15px 0;
+}
+
 /* --- Responsive Mobile --- */
 @media (max-width: 600px) {
     .two-column li {
         flex: 1 1 100%;
-        /* 1 cột trên mobile */
     }
 
     .two-column li a {
         font-size: 18px;
-        /* nhỏ hơn chút để vừa màn hình */
     }
 
     .two-column img {
         max-width: 180px;
-        /* cho hình to hơn vì 1 cột */
     }
 
     .two-column a {
         font-size: 0 !important;
-        /* Ẩn text nhưng không ảnh hưởng ảnh */
     }
 
     .two-column a img {
         max-width: 180px;
         display: block;
+    }
+
+    .hotline-number {
+        width: 100%;
+        display: block;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .phone {
+        display: block;
+        line-height: 1.6;
+    }
+
+    .phone-separator {
+        display: none;
+    }
+    .highlight-service {
+        gap: 12px;
     }
 }
