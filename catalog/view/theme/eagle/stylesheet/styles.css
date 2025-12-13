@@ -4955,8 +4955,9 @@ footer {
     font-weight: 500 !important;
     font-size: 20px !important;
 }
+
 div.logo_wrap img.svg-logo {
-    width: 50% !important;
+    width: 40% !important;
     height: auto !important;
     max-width: none !important;
     transform: scale(0.8) !important;
@@ -5111,7 +5112,44 @@ div.logo_wrap img.svg-logo {
         padding-bottom: 80px
     }
 }
+/* Link logo */
+.logo_wrap .logo {
+    display: flex;
+    align-items: center;       /* căn giữa logo với block chữ */
+    gap: 8px;
+    justify-content: center;
+    text-decoration: none;
+}
 
+/* Image logo */
+.logo_wrap .logo img {
+    max-height: 70px;
+max-width: 70px;
+    /* width: auto; */
+    display: block;
+}
+
+/* Block chữ */
+.logo-text {
+    display: flex;
+    flex-direction: column;    /* 🔑 Hoàng Hải trên, Limousine dưới */
+    line-height: 1.1;
+    text-align: left;
+    white-space: nowrap;       /* không cho vỡ dòng */
+}
+
+/* Hoàng Hải */
+.logo-name {
+    color: red;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Limousine */
+.logo-sub {
+    font-size: 12px;
+    font-weight: 500;
+}
 @media (max-width:991px) {
     .text-left-sm {
         text-align: left
