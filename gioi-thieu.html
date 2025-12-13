@@ -5763,14 +5763,12 @@
                     </div>
                 </div>
             </div>
-
-
-
-            <!-- CTA -->
-            <section class="section_pre_footer module_service text-center animated fadeInUp">
+            <section class="section_pre_footer module_service text-center animated fadeInUp" style="padding-top:0;">
                 <div class="container">
-                    <h4>Bạn đang quan tâm dịch vụ nào?</h4>
-                    <a href="contact.html" class="btn-box">Liên hệ chúng tôi</a>
+                    <h4>Bạn đang quan tâm gì?</h4>
+                    <button class="btn-box" id="openContactPopup">
+                        Liên hệ chúng tôi
+                    </button>
                 </div>
             </section>
 
@@ -5797,7 +5795,7 @@
                         <h3 class="footer_title">Liên hệ</h3>
 
                         <div class="chat-item">
-                            <a href="https://m.me/huudai1997" aria-label="Chat Messenger">
+                            <a href="https://m.me/hoanghailimousine" aria-label="Chat Messenger">
                                 <button class="chat-btnn messenger">
                                     <img src="image/svg/fb.png" loading="eager" alt="Messenger Icon">
                                 </button>
@@ -5854,11 +5852,11 @@
     </footer>
     <div class="chat-wrap">
         <div class="chat-buttons">
-            <button class="chat-btn messenger" data-link="https://m.me/huudai1997" aria-label="Chat Messenger">
-                <img src="image/svg/fb.png" loading="eager" alt="Messenger Icon">
-            </button>
             <button class="chat-btn zalo" data-link="https://zalo.me/+84983859568" aria-label="Chat Zalo">
                 <img src="image/svg/zalo.png" loading="eager" alt="Zalo Icon">
+            </button>
+            <button class="chat-btn messenger" data-link="https://m.me/hoanghailimousine" aria-label="Chat Messenger">
+                <img src="image/svg/fb.png" loading="eager" alt="Messenger Icon">
             </button>
             <button class="chat-btn whatsapp" data-link="https://wa.me/+84983859568" aria-label="Chat WhatsApp">
                 <img src="image/svg/whatsapp.png" loading="eager" alt="WhatsApp Icon">
@@ -5898,6 +5896,71 @@
             });
         });
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const openBtn = document.getElementById('openContactPopup');
+            const popup = document.getElementById('contactPopup');
+
+            if (!openBtn || !popup) {
+                console.error('Popup elements not found');
+                return;
+            }
+
+            openBtn.addEventListener('click', function () {
+                popup.style.display = 'flex';
+            });
+
+            popup.addEventListener('click', function (e) {
+                if (
+                    e.target === popup ||
+                    e.target.classList.contains('popup-close-x')
+                ) {
+                    popup.style.display = 'none';
+                }
+
+                const btn = e.target.closest('.popup-btn');
+                if (btn && btn.dataset.link) {
+                    window.open(btn.dataset.link, '_blank');
+                }
+            });
+        });
+    </script>
+
+    <div class="contact-popup-overlay" id="contactPopup">
+        <div class="contact-popup-box">
+
+            <!-- Nút đóng -->
+            <button class="popup-close-x" aria-label="Đóng popup">✕</button>
+
+            <h3>Thông tin liên hệ</h3>
+
+            <p class="popup-address">
+                📍 Đường Lê Lai, Khả Lễ, Võ Cường, TP Bắc Ninh
+            </p>
+
+            <div class="popup-contact-actions">
+                <button class="popup-btn zalo" data-link="https://zalo.me/+84983859568">
+                    <img src="image/svg/zalo.png" alt="">
+                    <span>Zalo</span>
+                </button>
+                <button class="popup-btn messenger" data-link="https://m.me/hoanghailimousine">
+                    <img src="image/svg/fb.png" alt="">
+                    <span>Messenger</span>
+                </button>
+                <button class="popup-btn whatsapp" data-link="https://wa.me/84983859568">
+                    <img src="image/svg/whatsapp.png" alt="">
+                    <span>WhatsApp</span>
+                </button>
+
+                <button class="popup-btn mobile" data-link="tel:+84983859568">
+                    <img src="image/svg/mobile.png" alt="">
+                    <span>Gọi điện</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
 </body>
 
 </html>
