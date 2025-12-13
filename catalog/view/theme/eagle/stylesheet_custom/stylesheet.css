@@ -81,14 +81,95 @@
     padding-left: 0;
     margin-left: 0;
 }
-
 .highlight-service {
     display: grid;
     grid-template-columns: 6fr 4fr;
-    /* gap: 20px; */
-    /* align-items: center; */
+    align-items: stretch;
     margin: 15px 0;
 }
+
+.highlight-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.highlight-image[data-bg] {
+    background-image: attr(data-bg url);
+}
+/* ===== VERSION 2 ===== */
+.highlight-service-v2 {
+    display: grid;
+    gap: 20px;
+}
+
+.highlight-service-v2 .highlight-image {
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+@media (min-width: 992px) {
+    .highlight-service-v2 {
+        display: grid;
+        grid-template-columns: 6fr 4fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "content image"
+            "list    image"
+            "footer  image";
+        gap: 20px;
+        align-items: stretch;
+    }
+
+    .highlight-content {
+        grid-area: content;
+    }
+
+    .highlight-list {
+        grid-area: list;
+    }
+
+    .highlight-footer {
+        grid-area: footer;
+    }
+
+    .highlight-image {
+        grid-area: image;
+        align-self: stretch;
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 991px) {
+    .highlight-service-v2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "content content"
+            "list    image"
+            "footer  footer";
+        gap: 12px;
+    }
+
+    .highlight-content {
+        grid-area: content;
+    }
+
+    .highlight-list {
+        grid-area: list;
+    }
+
+    .highlight-image {
+        grid-area: image;
+        min-height: 160px;
+    }
+
+    .highlight-footer {
+        grid-area: footer;
+    }
+}
+
 
 /* --- Responsive Mobile --- */
 @media (max-width: 600px) {
@@ -194,7 +275,6 @@
     border-radius: 6px;
     cursor: pointer;
 }
-/* Box relative để đặt nút X */
 .contact-popup-box {
     position: relative;
 }
@@ -216,14 +296,12 @@
     color: #d32f2f;
 }
 
-/* Địa chỉ */
 .popup-address {
     margin: 8px 0 16px;
     font-size: 14px;
     color: #555;
     line-height: 1.4;
 }
-/* Mobile */
 @media (max-width: 480px) {
     .popup-contact-actions {
         grid-template-columns: 1fr;
