@@ -5573,13 +5573,13 @@
                             <span class="logo-text">
                                 <span class="logo-name">HOÀNG HẢI LIMOUSINE</span>
                                 <span class="logo-sub">-an tâm trên mọi nẻo đường-</span>
-                            </span></a> </div>
+                            </span>
+                        </a> </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-xs-2">
                     <div class="row align-items-center justify-content-start">
-                        <div class="col-sm-3"> </div>
-                        <div class="col-sm-2">
-                            <div class="logo_wrap text-center hidden-xs"> <a href="index.html" class="logo"
+                        <div class="col-sm-5">
+                            <div class="logo_wrap text-center hidden-xs hidden-sm"> <a href="index.html" class="logo"
                                     title="Hoang Hai Limousine">
                                     <img src="image/catalog/logo/logo.png" alt="Hoang Hai Limousine" class="svg-logo" />
                                     <span class="logo-text">
@@ -5591,7 +5591,7 @@
                                 <span></span> <span></span>
                                 <span></span> </a>
                         </div>
-                        <div class="col-sm-5 m-t-15 header_menu visible-lg visible-md">
+                        <div class="col-sm-6 m-t-15 header_menu visible-lg visible-md">
                             <ul class="clearfix menu_lv1 pull-left">
                                 <li class="item_lv1"> <a href="index.html" title="Trang chủ">Trang chủ</a> </li>
                                 <li class="item_lv1"> <a href="gioi-thieu.html" title="Giới thiệu">Giới thiệu</a> </li>
@@ -5617,6 +5617,7 @@
             </div>
         </div>
     </header>
+
     <div class="container hidden"> </div>
     <main>
         <div id="contact">
@@ -5892,12 +5893,10 @@
                         </div>
 
                         <div class="chat-item">
-                            <a href="weixin://dl/chat?0983-829-568" aria-label="Chat WeChatApp">
-                                <button class="chat-btnn wechatapp">
+                                <button class="chat-btnn wechatapp qr-open">
                                     <img src="image/svg/wechat.svg" loading="eager" alt="WeChat Icon">
                                 </button>
                                 <div class="chat-label">WeChat</div>
-                            </a>
                         </div>
 
                         <div class="chat-item">
@@ -5940,7 +5939,7 @@
         <button class="chat-btn whatsapp" data-link="https://wa.me/+84983859568" aria-label="Chat WhatsApp">
             <img src="image/svg/whatsapp.png" loading="eager" alt="WhatsApp Icon">
         </button>
-        <button class="chat-btn wechat" data-link="weixin://dl/chat?0983-829-568" aria-label="Chat WeChat">
+        <button class="chat-btn wechat qr-open" aria-label="Chat WeChat">
             <img src="image/svg/wechat.svg" loading="eager" alt="WeChatApp Icon">
         </button>
         
@@ -5980,5 +5979,21 @@
         });
     </script>
 </body>
+<input type="checkbox" id="qr-toggle" hidden>
+
+<div class="qr-overlay">
+    <label for="qr-toggle" class="qr-backdrop"></label>
+
+    <div class="qr-modal">
+        <label for="qr-toggle" class="qr-close">✕</label>
+        <img src="image/catalog/products/qr-wechat.jpeg" alt="WeChat QR">
+        <p>Scan QR WeChat</p>
+    </div>
+</div>
+<script>
+document.querySelectorAll('.qr-open').forEach(btn =>
+    btn.onclick = () => document.getElementById('qr-toggle').checked = true
+);
+</script>
 
 </html>

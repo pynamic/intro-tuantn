@@ -81,3 +81,62 @@
     color: #fdfbfb;
     font-weight: 500;
 }
+/* ===== OVERLAY ===== */
+.qr-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    z-index: 9999;
+}
+
+#qr-toggle:checked ~ .qr-overlay {
+    display: block;
+}
+
+/* nền mờ */
+.qr-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.6);
+}
+
+/* ===== MODAL ===== */
+.qr-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    background: #fff;
+    padding: 20px;
+    border-radius: 14px;
+    width: 260px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,.3);
+    animation: qrZoom .25s ease forwards;
+}
+
+.qr-modal img {
+    width: 100%;
+}
+
+.qr-modal p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* nút đóng */
+.qr-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* animation */
+@keyframes qrZoom {
+    to {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
