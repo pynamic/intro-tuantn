@@ -5729,6 +5729,9 @@ max-width: 70px;
 }
 
 @media (max-width:767px) {
+    div.logo_wrap img.svg-logo {
+        width: 40% !important;
+    }
     .text-left-xs {
         text-align: left
     }
