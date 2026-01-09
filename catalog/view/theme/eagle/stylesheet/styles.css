@@ -837,18 +837,18 @@ body.overflow_hidden {
 }
 
 .page_banner_top.height_300 {
-    height: 300px
+    height: 150px
 }
 
 .banner_top_title {
     position: absolute;
-    top: 40%;
+    top: 15%;
     width: 100%;
     left: 0
 }
 
 .banner_top_title h1 {
-    font-size: 42px;
+    font-size: 36px;
     font-weight: 700;
     /* color: #000000; */
     font-family: Lora, sans-serif;
@@ -5797,7 +5797,7 @@ max-width: 70px;
     }
 
     .page_banner_top.height_300 {
-        height: 200px
+        height: 150px
     }
 
     .human_wrap {
