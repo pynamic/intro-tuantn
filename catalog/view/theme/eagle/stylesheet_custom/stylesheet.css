@@ -402,7 +402,9 @@
 }
 
 .service-body .btn-box {
+    font-size: large;
     display: block;
     width: fit-content;
     margin: 12px auto 0; /* center nút */
+    font-weight: 1000;
 }
