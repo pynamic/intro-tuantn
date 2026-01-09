@@ -399,10 +399,18 @@
 }
 .service-body {
     text-align: left;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
 }
 
 .service-body .btn-box {
+    font-size: large;
     display: block;
     width: fit-content;
-    margin: 12px auto 0; /* center nút */
+    margin: 12px auto 0;
+    font-weight: 1000;
+    margin-top: auto;
+    align-self: center;
 }
