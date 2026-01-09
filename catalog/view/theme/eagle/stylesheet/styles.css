@@ -4957,8 +4957,12 @@ footer {
 }
 
 div.logo_wrap img.svg-logo {
-    width: 15% !important;
-    height: auto !important;
+    width: auto !important;
+    height: 80px !important;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    /* width: 15% !important; */
+    /* height: auto !important; */
     max-width: none !important;
     transform: scale(0.8) !important;
     transform-origin: center center !important;
@@ -5117,7 +5121,7 @@ div.logo_wrap img.svg-logo {
     display: flex;
     align-items: center;       /* căn giữa logo với block chữ */
     gap: 8px;
-    justify-content: center;
+    justify-content: right;
     text-decoration: none;
 }
 
@@ -5229,7 +5233,9 @@ max-width: 70px;
     .header_menu ul ul li a {
         color: #000
     }
-
+.logo_wrap .logo {
+    justify-content: center;
+}
     #showmenu-mobile {
         position: absolute;
         left: auto;
@@ -5729,9 +5735,9 @@ max-width: 70px;
 }
 
 @media (max-width:767px) {
-    div.logo_wrap img.svg-logo {
+    /* div.logo_wrap img.svg-logo {
         width: 40% !important;
-    }
+    } */
     .text-left-xs {
         text-align: left
     }
