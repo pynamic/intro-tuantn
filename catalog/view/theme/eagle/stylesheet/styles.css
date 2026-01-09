@@ -1131,10 +1131,11 @@ header .login a {
     height: calc(100vh - 61px);
     overflow: hidden;
     background-position: bottom center;
-    /* background-size: cover; */
-    background-size: 100% 110%;
+    background-size: auto 100%;
+    /* background-size: 100% 110%; */
     transition: background 0.3s ease;
     background-repeat: no-repeat;
+
 
 }
 /* Responsive: điều chỉnh background-size trên màn hình nhỏ */
