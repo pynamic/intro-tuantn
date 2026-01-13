@@ -5703,7 +5703,101 @@
 
     <div class="container hidden"> </div>
     <main>
-        <section class=" module_gallery" id="gallery-0">
+    <section class="video-slider">
+        <video class="slider-video" autoplay muted loop playsinline>
+            <source src="video/video-1.mp4" type="video/mp4">
+        </video>
+
+        <div class="overlay"></div>
+
+        <!-- Arrow -->
+        <button class="nav prev" onclick="prevVideo()">❮</button>
+        <button class="nav next" onclick="nextVideo()">❯</button>
+
+        <!-- Dots -->
+        <ul class="dots">
+            <li class="active" onclick="selectVideo(0)"></li>
+            <li onclick="selectVideo(1)"></li>
+        </ul>
+    </section>
+
+<script>
+    const videos = [
+        'video/video-1.mp4',
+        'video/video-2.mp4',
+    ];
+
+    let currentIndex = 0;
+    let hideTimer = null;
+
+    const slider = document.querySelector('.video-slider');
+    const video  = document.querySelector('.slider-video');
+    const dots   = document.querySelectorAll('.dots li');
+
+    video.addEventListener('click', () => {
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    });
+    function showPlayBtn() {
+        playBtn.classList.remove('hide');
+
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(() => {
+            if (!video.paused) {
+                playBtn.classList.add('hide');
+            }
+        }, 1000); // ⏱ 1 giây
+    }
+
+    function updateVideo() {
+        video.src = videos[currentIndex];
+        video.play();
+        playBtn.innerHTML = '❚❚';
+        showPlayBtn();
+
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[currentIndex].classList.add('active');
+    }
+
+    function nextVideo() {
+        currentIndex = (currentIndex + 1) % videos.length;
+        updateVideo();
+    }
+
+    function prevVideo() {
+        currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+        updateVideo();
+    }
+
+    function selectVideo(index) {
+        currentIndex = index;
+        updateVideo();
+    }
+
+    function togglePlay() {
+        if (video.paused) {
+            video.play();
+            playBtn.innerHTML = '❚❚';
+        } else {
+            video.pause();
+            playBtn.innerHTML = '▶';
+        }
+        showPlayBtn();
+    }
+
+    /* HIỆN KHI TƯƠNG TÁC */
+    slider.addEventListener('mousemove', showPlayBtn);
+    slider.addEventListener('touchstart', showPlayBtn);
+    video.addEventListener('pause', showPlayBtn);
+</script>
+
+
+
+
+        <!-- <section class=" module_gallery" id="gallery-0">
             <div class="owl-carousel gallery_owl_slide" id="owl_slide-0">
                 <div class="item" style="background-image:url(./image/slider/slide1.png)">
                     <a href="javascript:void(0)" title="Xem thêm"></a>
@@ -5722,11 +5816,10 @@
                 </div>
             </div>
             <div class="fixed-scroll-down">
-                <!-- <span class="fixed-scroll-text">Kéo xuống</span> -->
                 <img
                     src="catalog/view/theme/eagle/image/icon-scroll-down.png" class="icon-scroll-down"
                     alt="scroll down" /> </div>
-        </section>
+        </section> -->
         <script>
             $(document).ready(function () {
                 /* Slider index */
