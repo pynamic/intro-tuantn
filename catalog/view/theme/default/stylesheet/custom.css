@@ -334,3 +334,114 @@
     max-height: 52px;
     overflow: hidden;
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= SLIDER CONTAINER ================= */
+.video-slider {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 90px); /* trừ menu */
+    background: #000;            /* viền đen */
+    overflow: hidden;
+}
+
+/* ================= VIDEO ================= */
+.video-slider .slider-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    max-width: 100%;
+    max-height: 100%;
+
+    width: auto;
+    height: auto;
+    object-fit: contain;
+
+    z-index: 1;
+}
+
+/* ================= OVERLAY ================= */
+.video-slider .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.25);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* ================= ARROW BUTTON ================= */
+.video-slider .nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 4;
+
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,.35);
+    font-size: 24px;
+    cursor: pointer;
+    transition: background .25s ease;
+}
+
+.video-slider .nav:hover {
+    background: rgba(255,255,255,.7);
+}
+
+.video-slider .prev { left: 16px; }
+.video-slider .next { right: 16px; }
+
+/* ================= DOTS ================= */
+.video-slider .dots {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 12px;
+    list-style: none;
+
+    z-index: 4;
+}
+
+.video-slider .dots li {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.4);
+    cursor: pointer;
+    transition: transform .25s ease, background .25s ease;
+}
+
+.video-slider .dots li.active {
+    background: #fff;
+    transform: scale(1.2);
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+    .video-slider .nav {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
+
+}
+.video-slider .slider-video {
+    cursor: pointer; /* báo hiệu click được */
+}
