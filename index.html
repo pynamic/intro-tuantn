@@ -5741,22 +5741,12 @@
             video.pause();
         }
     });
-    function showPlayBtn() {
-        playBtn.classList.remove('hide');
-
-        clearTimeout(hideTimer);
-        hideTimer = setTimeout(() => {
-            if (!video.paused) {
-                playBtn.classList.add('hide');
-            }
-        }, 1000); // ⏱ 1 giây
-    }
 
     function updateVideo() {
         video.src = videos[currentIndex];
         video.play();
-        playBtn.innerHTML = '❚❚';
-        showPlayBtn();
+        // playBtn.innerHTML = '❚❚';
+        // showPlayBtn();
 
         dots.forEach(dot => dot.classList.remove('active'));
         dots[currentIndex].classList.add('active');
@@ -5776,22 +5766,6 @@
         currentIndex = index;
         updateVideo();
     }
-
-    function togglePlay() {
-        if (video.paused) {
-            video.play();
-            playBtn.innerHTML = '❚❚';
-        } else {
-            video.pause();
-            playBtn.innerHTML = '▶';
-        }
-        showPlayBtn();
-    }
-
-    /* HIỆN KHI TƯƠNG TÁC */
-    slider.addEventListener('mousemove', showPlayBtn);
-    slider.addEventListener('touchstart', showPlayBtn);
-    video.addEventListener('pause', showPlayBtn);
 </script>
 
 
