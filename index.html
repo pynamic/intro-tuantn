@@ -5571,7 +5571,7 @@
 </head>
 <div class="chat-wrap">
     <div class="chat-buttons">
-        <button class="chat-btn zalo" data-link="https://zalo.me/+84983859568" aria-label="Chat Zalo">
+        <button class="chat-btn zalo open-zalo-popup" aria-label="Chat Zalo">
             <img src="image/svg/zalo.png" loading="eager" alt="Zalo Icon">
         </button>
         <button class="chat-btn messenger" data-link="https://m.me/hoanghailimousine" aria-label="Chat Messenger">
@@ -5580,7 +5580,8 @@
         <button class="chat-btn whatsapp" data-link="https://wa.me/+84983859568" aria-label="Chat WhatsApp">
             <img src="image/svg/whatsapp.png" loading="eager" alt="WhatsApp Icon">
         </button>
-        <button class="chat-btn wechat qr-open aria-label="Chat WeChat">
+        <button class="chat-btn wechat qr-open" aria-label="Chat WeChat"
+        data-qr="image/catalog/products/qr-wechat.jpeg" data-title="WeChat Hoàng Hải Limousine">
             <img src="image/svg/wechat.svg" loading="eager" alt="WeChatApp Icon">
         </button>
         
@@ -5718,6 +5719,8 @@
         <ul class="dots">
             <li class="active" onclick="selectVideo(0)"></li>
             <li onclick="selectVideo(1)"></li>
+            <li onclick="selectVideo(2)"></li>
+            <li onclick="selectVideo(3)"></li>
         </ul>
     </section>
 
@@ -5725,6 +5728,8 @@
     const videos = [
         'video/video-1.mp4',
         'video/video-2.mp4',
+        'video/video-3.mp4',
+        'video/video-4.mp4'
     ];
 
     let currentIndex = 0;
@@ -5745,8 +5750,6 @@
     function updateVideo() {
         video.src = videos[currentIndex];
         video.play();
-        // playBtn.innerHTML = '❚❚';
-        // showPlayBtn();
 
         dots.forEach(dot => dot.classList.remove('active'));
         dots[currentIndex].classList.add('active');
@@ -5767,84 +5770,6 @@
         updateVideo();
     }
 </script>
-
-
-
-
-        <!-- <section class=" module_gallery" id="gallery-0">
-            <div class="owl-carousel gallery_owl_slide" id="owl_slide-0">
-                <div class="item" style="background-image:url(./image/slider/slide1.png)">
-                    <a href="javascript:void(0)" title="Xem thêm"></a>
-                </div>
-                <div class="item" style="background-image:url(./image/slider/slide2.png)">
-                    <a href="javascript:void(0)" title="Xem thêm"></a>
-                </div>
-                <div class="item" style="background-image:url(./image/slider/slide3.png)">
-                    <a href="javascript:void(0)" title="Xem thêm"></a>
-                </div>
-                <div class="item" style="background-image:url(./image/slider/slide4.jpg)">
-                    <a href="javascript:void(0)" title="Xem thêm"></a>
-                </div>
-                <div class="item" style="background-image:url(./image/slider/slide5.jpg)">
-                    <a href="javascript:void(0)" title="Xem thêm"></a>
-                </div>
-            </div>
-            <div class="fixed-scroll-down">
-                <img
-                    src="catalog/view/theme/eagle/image/icon-scroll-down.png" class="icon-scroll-down"
-                    alt="scroll down" /> </div>
-        </section> -->
-        <script>
-            $(document).ready(function () {
-                /* Slider index */
-                var owlSliderIndex = $('#owl_slide-0');
-                owlSliderIndex.owlCarousel({
-                    nav: true,
-                    dotsSpeed: 400,
-                    dots: false,
-                    mouseDrag: true,
-                    loop: true,
-                    items: 1,
-                    autoplayHoverPause: true,
-                    autoplay: true,
-                    autoplayTimeout: 5000,
-                    margin: 0,
-                    stagePadding: 0,
-                });
-                owlSliderIndex.on('changed.owl.carousel translated.owl.carousel initialized.owl.carousel',
-                    function (event) {
-                        $(this).find(".owl-item .hrv-banner-caption").css('display', 'none');
-                        $(this).find(".owl-item .hrv-banner-caption").removeClass('hrv-caption');
-                        $(this).find(".owl-item.active .hrv-banner-caption").css('display', 'block');
-                        var heading = $(this).find('.owl-item.active .hrv-banner-caption').clone()
-                            .removeClass();
-                        $(this).find('.owl-item.active .hrv-banner-caption').remove();
-                        $(this).find('.owl-item.active>.item').append(heading);
-                        $(this).find('.owl-item.active>.item>div').addClass(
-                            'hrv-banner-caption hrv-caption');
-                    });
-                var owlSliderDot = owlSliderIndex.find('.owl-dot');
-                owlSliderDot.each(function () {
-                    var indexTemp = parseInt($(this).index());
-                    var index = 0;
-                    if (index < 10) {
-                        index = "0" + (indexTemp + 1);
-                    } else {
-                        index = (indexTemp + 1);
-                    }
-                    $(this).html('<span class="dot-border"></span><span class="dot-number">' + index +
-                        '</span>');
-                });
-                owlSliderIndex.find('.owl-dots').wrap('<div class="container wrap-dots"></div>');
-            });
-        </script>
-        <script>
-            $(".fixed-scroll-down .fixed-scroll-text").click(function () {
-                $([document.documentElement, document.body]).animate({
-                    scrollTop: $("#section_home_heading-0").offset().top - 80
-                }, 1000);
-            });
-        </script>
         <section class="section_home_heading module_service text-center" id="section_home_heading-0">
             <div class="container">
                 <div class="section_home_heading__title animated fadeInDown">
@@ -5897,37 +5822,6 @@
             </div>
         </section>
 
-        <!-- <section class="awe-section-3 module_category category_custom" id="category_custom-1">
-            <div class="container">
-                <div id="shop_lists">
-                    <div class="row">
-
-                        <div class="col-md-4 col-xs-12">
-                            <div class="shop-item text-center animated fadeInLeft"> <a href="contact.html">
-                                    <div class="item-img"></div>
-                                    <h3>Dịch vụ nhanh chóng</h3>
-                                    <span>Xem thêm</span>
-                                </a> </div>
-                        </div>
-                        <div class="col-md-4 col-xs-12">
-                            <div class="shop-item text-center animated fadeInLeft"> <a href="contact.html">
-                                    <div class="item-img">
-                                    </div>
-                                    <h3>Hỗ trợ tận tình</h3>
-                                    <span>Xem thêm</span>
-                                </a> </div>
-                        </div>
-                        <div class="col-md-4 col-xs-12">
-                            <div class="shop-item text-center animated fadeInLeft"> <a href="contact.html">
-                                    <div class="item-img"> </div>
-                                    <h3>Uy tín & Chất lượng</h3>
-                                    <span>Xem thêm</span>
-                                </a> </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
         <section class="section_pre_footer module_service text-center animated fadeInUp" style="padding-top:0;">
             <div class="container">
                 <h4>Bạn đang quan tâm?</h4>
@@ -5950,6 +5844,7 @@
                         <p> <a><i class="block_icon fas fa-map-marker-alt">
                                 </i> Đường Lê Lai, Khả Lễ, Võ Cường, TP Bắc Ninh</a> </p>
                         <p> <a href="tel:+84983859568"><i class="block_icon fas fa-phone"></i> +84 983.859.568</a>
+                        <p> <a href="tel:+84983829568"><i class="block_icon fas fa-phone"></i> +84 983.829.568</a>
                         </p>
                         <p> <a href="mailto:hoanghai.limousine.bn@gmail.com"><i class="block_icon fas fa-envelope">
                                 </i> hoanghai.limousine.bn@gmail.com</a> </p>
@@ -5970,12 +5865,10 @@
                         </div>
 
                         <div class="chat-item">
-                            <a href="https://zalo.me/+84983859568" aria-label="Chat Zalo">
-                                <button class="chat-btnn zalo">
+                                <button class="chat-btnn zalo open-zalo-popup">
                                     <img src="image/svg/zalo.png" loading="eager" alt="Zalo Icon">
                                 </button>
                                 <div class="chat-label">Zalo</div>
-                            </a>
                         </div>
 
                         <div class="chat-item">
@@ -5988,7 +5881,8 @@
                         </div>
 
                         <div class="chat-item">
-                                <button class="chat-btnn wechatapp qr-open">
+                                <button class="chat-btnn wechatapp qr-open"
+                                data-qr="image/catalog/products/qr-wechat.jpeg" data-title="WeChat Hoàng Hải Limousine">
                                     <img src="image/svg/wechat.svg" loading="eager" alt="WeChat Icon">
                                 </button>
                                 <div class="chat-label">WeChat</div>
@@ -6096,7 +5990,7 @@
             </p>
 
             <div class="popup-contact-actions">
-                <button class="popup-btn zalo" data-link="https://zalo.me/+84983859568">
+                <button class="popup-btn zalo open-zalo-popup">
                     <img src="image/svg/zalo.png" alt="">
                     <span>Zalo</span>
                 </button>
@@ -6108,7 +6002,8 @@
                     <img src="image/svg/whatsapp.png" alt="">
                     <span>WhatsApp</span>
                 </button>
-                <button class="popup-btn whatsapp qr-open">
+                <button class="popup-btn whatsapp qr-open"
+                data-qr="image/catalog/products/qr-wechat.jpeg" data-title="WeChat Hoàng Hải Limousine">
                     <img src="image/svg/wechat.svg" alt="">
                     <span>WeChat</span>
                 </button>
@@ -6128,14 +6023,61 @@
 
     <div class="qr-modal">
         <label for="qr-toggle" class="qr-close">✕</label>
-        <img src="image/catalog/products/qr-wechat.jpeg" alt="WeChat QR">
-        <p>Scan QR WeChat</p>
+        <img id="qr-image"
+             src=""
+             alt="QR Code">
+        <p id="qr-title"></p>
     </div>
 </div>
 <script>
-document.querySelectorAll('.qr-open').forEach(btn =>
-    btn.onclick = () => document.getElementById('qr-toggle').checked = true
-);
+const qrToggle = document.getElementById('qr-toggle');
+const qrImage  = document.getElementById('qr-image');
+const qrTitle  = document.getElementById('qr-title');
+
+document.querySelectorAll('.qr-open').forEach(btn => {
+    btn.addEventListener('click', () => {
+        qrImage.src = btn.dataset.qr;
+        qrTitle.textContent = btn.dataset.title || 'Scan QR';
+        qrToggle.checked = true;
+    });
+});
+</script>
+<div class="zalo-popup" id="zaloPopup">
+    <div class="zalo-popup__backdrop"></div>
+
+    <div class="zalo-popup__box">
+        <button class="zalo-popup__close">✕</button>
+
+        <h3>Zalo Hoàng Hải Limousine</h3>
+        <p class="zalo-desc">Chọn kênh Zalo bạn muốn liên hệ</p>
+
+        <div class="zalo-options">
+            <div class="zalo-item">
+                <img src="image/catalog/products/qr-zalo-1.jpeg" alt="Zalo CSKH">
+                <span>Zalo CSKH</span>
+            </div>
+
+            <div class="zalo-item">
+                <img src="image/catalog/products/qr-zalo-2.jpeg" alt="Zalo Đặt vé">
+                <span>Zalo Đặt vé</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+const zaloPopup = document.getElementById('zaloPopup');
+
+document.querySelectorAll('.open-zalo-popup').forEach(btn => {
+    btn.addEventListener('click', () => {
+        zaloPopup.classList.add('active');
+    });
+});
+
+zaloPopup.querySelector('.zalo-popup__close').onclick = () =>
+    zaloPopup.classList.remove('active');
+
+zaloPopup.querySelector('.zalo-popup__backdrop').onclick = () =>
+    zaloPopup.classList.remove('active');
 </script>
 
 </html>
