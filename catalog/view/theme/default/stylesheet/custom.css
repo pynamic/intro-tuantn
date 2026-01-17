@@ -534,14 +534,16 @@
     /* popup box */
     .zalo-popup__box {
         position: fixed;
-        left: 0;
-        right: 0;
-        bottom: 0;
-
         height: 90vh;              /* CHIẾM GẦN FULL MÀN */
         max-height: 90vh;
         overflow-y: auto;          /* CHO PHÉP VUỐT */
+        left: 0 !important;
+        right: 0 !important;
+        top: auto !important;
+        bottom: 0 !important;
 
+        transform: none !important;   /* ⬅️ CHÌA KHOÁ */
+        margin: 0 auto;
         background: #fff;
         border-radius: 16px 16px 0 0;
         padding: 16px;
