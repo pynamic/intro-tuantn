@@ -5152,6 +5152,7 @@ max-width: 70px;
 
 /* Limousine */
 .logo-sub {
+    text-transform: uppercase;
     font-size: 12px;
     font-weight: 500;
 }
