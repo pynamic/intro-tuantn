@@ -445,3 +445,157 @@
 .video-slider .slider-video {
     cursor: pointer; /* báo hiệu click được */
 }
+/* ===== ZALO POPUP ===== */
+.zalo-popup {
+    position: fixed;
+    inset: 0;
+    display: none;
+    z-index: 9999;
+}
+
+.zalo-popup.active {
+    display: block;
+}
+
+.zalo-popup__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.6);
+}
+
+.zalo-popup__box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 16px;
+    width: 360px;
+    max-width: calc(100% - 40px);
+    padding: 20px;
+    text-align: center;
+}
+
+.zalo-popup__box h3 {
+    margin-bottom: 6px;
+}
+
+.zalo-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.zalo-popup__close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* QR OPTIONS */
+.zalo-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.zalo-item img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.zalo-item span {
+    display: block;
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .zalo-options {
+        grid-template-columns: 1fr;
+    }
+}
+/* ================= MOBILE ZALO QR FULL ================= */
+@media (max-width: 600px) {
+
+    /* overlay */
+    .zalo-popup {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+    }
+
+    /* popup box */
+    .zalo-popup__box {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        height: 90vh;              /* CHIẾM GẦN FULL MÀN */
+        max-height: 90vh;
+        overflow-y: auto;          /* CHO PHÉP VUỐT */
+
+        background: #fff;
+        border-radius: 16px 16px 0 0;
+        padding: 16px;
+    }
+
+    /* title */
+    .zalo-popup__box h3 {
+        text-align: center;
+        margin-bottom: 4px;
+    }
+
+    .zalo-desc {
+        text-align: center;
+        font-size: 13px;
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    /* QR list */
+    .zalo-options {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    /* mỗi QR = gần 1 màn hình */
+    .zalo-item {
+        min-height: 70vh;          /* CHÌA KHOÁ */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .zalo-item img {
+        width: 100%;
+        max-width: 260px;
+        border-radius: 12px;
+    }
+
+    .zalo-item span {
+        margin-top: 12px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    /* close */
+    .zalo-popup__close {
+        position: sticky;
+        top: 0;
+        margin-left: auto;
+        background: none;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+    }
+}
